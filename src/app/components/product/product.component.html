@@ -1,0 +1,10 @@
+<ul class="list-unstyled">
+  <li *ngFor="let product of products" class="media my-3 border">
+    <img class="mr-3" src="http://placehold.it/200x100">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1"><a href="#">{{product.title}}</a> ----- <span>{{product.price}}元</span></h5>
+      <p>{{product.desc}}</p>
+      <app-stars></app-stars>
+    </div>
+  </li>
+</ul>
