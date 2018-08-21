@@ -1,18 +1,25 @@
-<form class="searchFrom" role="form">
+<form class="searchFrom" role="form" [formGroup]="formModel" (submit)="onSearch()" novalidate>
   <div class="form-group">
     <label for="productTitle">商品名称：</label>
-    <input type="text" id="productTitle" placeholder="商品名称" class="form-control">
+    <input formControlName="title" [class.is-invalid]="formModel.hasError('minlength', 'title')"
+           type="text" id="productTitle" placeholder="商品名称" class="form-control">
+    <span class="invalid-feedback" [class.hidden]="!formModel.hasError('minlenth', 'title')">
+      至少输入3个字
+    </span>
   </div>
   <div class="form-group">
     <label for="productPrice">商品价格：</label>
-    <input type="text" id="productPrice" placeholder="商品价格" class="form-control">
+    <input formControlName="price" [class.is-invalid]="formModel.hasError('positiveNumber', 'price')"
+           type="text" id="productPrice" placeholder="商品价格" class="form-control">
+    <span class="invalid-feedback" [class.hidden]="!formModel.hasError('positiveNumber', 'price')">
+      价格不能为负数
+    </span>
   </div>
   <div class="form-group">
     <label for="productCategory">商品类别：</label>
-    <select name="" id="productCategory" class="form-control">
-      <option value="">图书</option>
-      <option value="">电子</option>
-      <option value="">家居</option>
+    <select formControlName="category" name="" id="productCategory" class="form-control">
+      <option value="-1">全部分类</option>
+      <option *ngFor="let category of categories" [value]="category">{{category}}</option>
     </select>
   </div>
   <div class="form-group">
@@ -20,3 +27,14 @@
   </div>
 
 </form>
+
+<!--<div class="form-group">
+  <ul>
+    <li *ngFor="let p of products | async">{{p.title}}</li>
+  </ul>
+  <button (click)="searchProduct()"
+          type="button" class="btn btn-primary btn-block">搜索商品</button>
+</div>-->
+
+<!--<app-websocket></app-websocket>-->
+

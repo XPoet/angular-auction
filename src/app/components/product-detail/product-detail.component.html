@@ -1,0 +1,47 @@
+<div class="card">
+  <img class="card-img-top" src="http://placehold.it/820x230">
+  <div class="card-body">
+    <h5 class="card-title">{{ product?.title }}</h5>
+    <p>价格： {{ product?.price }} 元</p>
+    <p class="card-text">{{ product?.desc }}</p>
+    <p class="pull-right">评论数：{{ comments?.length }}</p>
+    <p>
+      <app-stars [rating]="product?.rating"></app-stars>
+    </p>
+  </div>
+</div>
+
+<div class="input-group mt-3">
+  <div type="text" class="form-control">最新出价：{{currentBid | number: '.2-2'}}元</div>
+  <div class="input-group-append">
+    <button class="btn btn-outline-primary" type="button"
+            [class.active]="isWatched"
+            (click)="watchProduct()"
+    >{{isWatched?'取消关注':'关注'}}</button>
+  </div>
+</div>
+
+<div class="card-body">
+  <button class="btn btn-primary" (click)="isCommentHidden = !isCommentHidden">发表评论</button>
+    <div class="form-group" [hidden]="isCommentHidden">
+      <app-stars [readonlyStar]="false" [(rating)]="newRating"></app-stars>
+      <textarea class="form-control" rows="3" [(ngModel)]="newComment"></textarea>
+      <button type="button"
+              class="form-control btn btn-success"
+              (click)="addComment()"
+      >
+        提交
+      </button>
+    </div>
+  <div class="row" *ngFor="let comment of comments">
+    <div class="col-md-12">
+      <p>评论人：{{ comment?.user }}</p>
+      <p class="pull-right">{{ comment?.timestamp }}</p>
+      <p><app-stars [rating]="comment?.rating"></app-stars></p>
+      <p>评论内容：{{ comment?.content }}</p>
+      <hr>
+    </div>
+  </div>
+
+</div>
+
