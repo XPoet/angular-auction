@@ -1,27 +1,29 @@
-# Auction
+# 基于Angular5+Bootstrap4在线竞拍网站
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+此项目参考 **慕课网Angular入门视频：打造在线竞拍网站** 编写而成，在本例使用了Angular5+Bootstrap4，因此跟视频中会有一点点不同。  
 
-## Development server
+在本例中，无论前端还是后端，均使用TypeScript编写，配合IDE强大的智能提示，体验真不是一般的好。有问题欢迎 _issues_ 或 邮件 _i@itpoet.cn_ 。
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 技术栈
+### 前端
+- Angular v5.2.0
+- RxJS v5.5.6
+- Bootstrap v4.1.0
+- font-awesome v4.7.0
 
-## Code scaffolding
+### 后端
+- Node.js
+- express v4.16.3
+- ws v6.0.0
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 前后端通信
+- http
+- WebSocket
 
-## Build
+## 使用
+### 安装依赖
+`npm install`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+### 启动
+`npm run statr-p`
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

@@ -43,8 +43,6 @@ export class SearchComponent implements OnInit {
     });
 
     this.categories = this.productService.getAllCategories();
-
-    this.onSearch();
   }
 
   positiveNumberValidator(control: FormControl): any {

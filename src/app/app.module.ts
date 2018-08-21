@@ -14,7 +14,6 @@ import {ProductService} from './services/product.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {FilterPipe} from './pipes/filter.pipe';
-import {WebsocketComponent} from './components/websocket/websocket.component';
 import {WebSocketService} from './services/web-socket.service';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
@@ -34,8 +33,7 @@ const routeConfig: Routes = [
     StarsComponent,
     ProductDetailComponent,
     HomeComponent,
-    FilterPipe,
-    WebsocketComponent
+    FilterPipe
   ],
   imports: [
     BrowserModule,
